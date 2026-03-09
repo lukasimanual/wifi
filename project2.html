@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>LGKRSC Wi-Fi</title>
+  
+  <style>
+  
+    @media (min-width: 768px){
+      .kumpulanpaket{
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+    
+    @media (min-width: 1024px){
+      .kumpulanpaket{
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+  
+    #margin{
+      padding: 5px;
+    }
+  
+    .navbar{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 20px;
+      background-color: #094067;
+      color: white;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+
+    .nav-links{
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      margin: 0;
+      padding: 0;
+    }
+    
+    .nav-links a{
+      text-decoration: none;
+      color: white;
+      font-weight: 500;
+    }
+    
+    .nav-links a:hover{
+      color: #3da9fc;
+    }
+  
+    html{
+      scroll-behavior: smooth;
+    }
+  
+    body{
+      font-family: Montserrat, sans-serif;
+      font-size: 14px;
+      margin: 0;
+    }
+    
+    .hero,
+    .paket,
+    .btn,
+    h1, h2, h3{
+      font-family: Poppins, sans-serif;
+    }
+    
+    #LGKRSC{
+      color: #3da9fc;
+      letter-spacing: 2px;
+    }
+    
+    .hero{
+      text-align: center;
+      font-family: Poppins, sans-serif;
+    }
+    
+    #penjelasan{
+      text-align: justify;
+      font-family: Montserrat, sans-serif;
+      margin-bottom: 50px;
+      
+    }
+    
+    
+    .paket{
+      text-align: center;
+      border-radius: 5px;
+      background-color: #094067;
+      padding: 5px;
+      padding-bottom: 25px;
+      color: white;
+      font-family: Poppins, sans-serif;
+    }
+    
+    .paket h2{
+      font-weight: 600;
+    }
+    
+    .paket h3{
+      font-weight: 700;
+      font-size: 1.6rem;
+      letter-spacing: 0.5px;
+      line-height: 1.2;
+    }
+    
+    .paket .btn{
+      margin: auto;
+    }
+    
+    .btn{
+      background-color: #3da9fc;
+      border-radius: 5px;
+      padding: 7px;
+      cursor: pointer;
+      transition: 0.2s ease;
+      border: none;
+      font-family: Poppins, sans-serif;
+      color: black;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    
+    .btn:focus{
+      outline: 2px solid #3da9fc;
+    }
+    
+    .btn:hover{
+      background-color: #fffffe;
+      transform: scale(1.05);
+    }
+    
+    .kumpulanpaket{
+      text-align: center;
+      margin-bottom: 100px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+    
+    .gambar{
+      width: 50px;
+      border-radius: 50%;
+    }
+    
+    #pict{
+      width: 200px;
+    }
+    
+    .keunggulan{
+      text-align: center;
+      background-color: #094067;
+      border-radius: 5px;
+      padding-bottom: 10px;
+      padding: 5px;
+      color: white;
+    }
+    
+    .kumpulankeunggulan{
+      text-align: center;
+      font-family: Montserrat, sans-serif;
+      margin-bottom: 80px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+    
+    .testi{
+      width: 50px;
+      border-radius: 50%;
+    }
+    
+    .riview{
+      text-align: center;
+      background-color: #094067;
+      border-radius: 10px;
+      padding-bottom: 10px;
+      padding: 10px;
+      color: white;
+      margin-bottom: 10px;
+    }
+    
+    #testimoni{
+      text-align: center;
+    }
+    
+    .form-ulasan{
+      display: block;
+      box-sizing: border-box;
+      margin: auto;
+      margin-top: 10px;
+      border: 2px solid #094067;
+      padding: 10px;
+      border-radius: 5px;
+      max-width: 1200px;
+    }
+    
+    .form-ulasan input,
+    .form-ulasan textarea{
+      width: 100%;
+      padding: 14px 16px;
+      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      background: transparent;
+      font-size: 0.95rem;
+      outline: none
+    }
+    
+    .form-ulasan textarea{
+      resize: vertical;
+      min-height: 120px;
+    }
+    
+    .form-ulasan input:focus,
+    .form-ulasan textarea:focus {
+      border-color: #094067;
+      box-shadow: 0 0 0 2px rgba(56,189,248,0.3);
+    }
+    
+    .form-ulasan button {
+      width: 100%;
+      padding: 14px;
+      border-radius: 10px;
+      border: none;
+      background: #094067;
+      font-weight: 600;
+      cursor: pointer;
+      color: white;
+    }
+
+    .form-ulasan button:hover {
+      background: #0ea5e9;
+    }
+    
+    #ulasan{
+      text-align: center;
+      margin-top: 80px;
+    }
+    
+    .form{
+      width: 100%;
+      padding: 10px;
+      border-radius: 5px;
+      border: none;
+      box-sizing: border-box;
+      margin-top: 5px;
+      letter-spacing: 1.5px;
+    }
+    
+    footer{
+      display: flex;
+      font-size: 9px;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    
+    .footerbos{
+      background-color: #094067;
+      color: white;
+      padding: 10px;
+      font-family: Montserrat, sans-serif;
+      margin-top: 80px;
+    }
+    
+    #toast{
+      position: fixed;
+      top: 80px; /* supaya tidak ketutup navbar */
+      left: 50%;
+      transform: translateX(-50%);
+      background: #3da9fc;
+      color: white;
+      padding: 12px 20px;
+      border-radius: 8px;
+      font-weight: 500;
+      opacity: 0;
+      transition: 0.3s;
+      z-index: 2000; /* lebih tinggi dari navbar */
+    }
+    
+    #toast.show{
+      opacity: 1;
+    }
+    
+    #toast.show{
+      opacity: 1;
+    }
+  </style>
+  
+</head>
+<body>
+  
+  
+  <nav class="navbar">
+    <div class="logo">LGKRSC</div>
+    <ul class="nav-links">
+      <li><a href="#penjelasan">Tentang</a></li>
+      <li><a href="#paket">Paket</a></li>
+      <li><a href="#testimoni">Testimoni</a></li>
+      <li><a href="#ulasan">Ulasan</a></li>
+    </ul>
+  </nav>
+  
+  <div class="hero">
+    <h1> <span id="LGKRSC">LGKRSC</span> Wi-Fi, Solusi Kebutuhan Internet Anda</h1>
+    <img src="wifi.jpg" id="pict" alt="gambar">
+  </div>
+  
+  <div id="margin">
+    <div id="penjelasan">
+      <h2>Apa sih Wi-Fi Itu?</h2>
+      <p>Wi-Fi adalah teknologi jaringan nirkabel berbasis standar IEEE 802.11 yang menggunakan gelombang radio untuk menyediakan akses internet berkecepatan tinggi. Ia bekerja melalui router yang mengirimkan sinyal radio, memungkinkan perangkat seperti ponsel, laptop, dan smart home untuk saling terhubung tanpa kabel.</p>
+      <p>Wi-Fi dapat digunakan untuk solusi kebutuhan internet sehari-hari karena dapat digunakan tanpa batasan dengan membayar 1× setiap bulan. Di LGKRSC tersedia banyak pilihan kecepatan jaringan mulai dari 50Mbps, 100Mbps, 150Mbps, 200Mbps, 250Mbps, 300Mbps, 400Mbps, sampai 500Mbps. Banyaknya pilihan kecepatan menjadikan LGKRSC banyak digemari para customer karena lebih menyesuaikan kemampuan customer untuk dapat menikmati Wi-Fi tanpa memikirkan biaya yang mahal, terlebih lagi banyak orang dapat menikmati internet lancar tanpa hambatan.</p>
+    </div>
+    
+    <h2 id="paket">Paket Kecepatan Internet</h2>
+    <div class="kumpulanpaket">
+      <div class=paket data-aos="fade-up">
+        <h2>50Mbps</h2>
+        <h3>Rp.100k</h3>
+        <hr>
+        <p>•Kecepatan 50Mbps</p>
+        <p>•Unlimited Data</p>
+        <a href="formpaket1.html" class="btn">Pilih Paket</a>
+      </div>
+      
+      <div class=paket data-aos="fade-up">
+        <h2>100Mbps</h2>
+        <h3>Rp.170k</h3>
+        <hr>
+        <p>•Kecepatan 100Mbps</p>
+        <p>•Unlimited Data</p>
+        <a href="formpaket2.html" class="btn">Pilih Paket</a>
+      </div>
+      
+      <div class=paket data-aos="fade-up">
+        <h2>150Mbps</h2>
+        <h3>Rp.340k</h3>
+        <hr>
+        <p>•Kecepatan 150Mbps</p>
+        <p>•Unlimited Data</p>
+        <a href="formpaket3.html" class="btn">Pilih Paket</a>
+      </div>
+      
+      <div class=paket data-aos="fade-up">
+        <h2>200Mbps</h2>
+        <h3>Rp.400k</h3>
+        <hr>
+        <p>•Kecepatan 200Mbps</p>
+        <p>•Unlimited Data</p>
+        <a href="formpaket4.html" class="btn">Pilih Paket</a>
+      </div>
+      
+      <div class=paket data-aos="fade-up">
+        <h2>300Mbps</h2>
+        <h3>Rp.530k</h3>
+        <hr>
+        <p>•Kecepatan 300Mbps</p>
+        <p>•Unlimited Data</p>
+        <a href="formpaket5.html" class="btn">Pilih Paket</a>
+      </div>
+      
+      <div class=paket data-aos="fade-up">
+        <h2>400Mbps</h2>
+        <h3>Rp.650k</h3>
+        <hr>
+        <p>•Kecepatan 400Mbps</p>
+        <p>•Unlimited Data</p>
+        <a href="formpaket6.html" class="btn">Pilih Paket</a>
+      </div>
+      
+      <div class=paket data-aos="fade-up">
+        <h2>500Mbps</h2>
+        <h3>Rp.740k</h3>
+        <hr>
+        <p>•Kecepatan 500Mbps</p>
+        <p>•Unlimited Data</p>
+        <a href="formpaket7.html" class="btn">Pilih Paket</a>
+      </div>
+      
+      <div class=paket data-aos="fade-up">
+        <h2>550Mbps</h2>
+        <h3>Rp.850k</h3>
+        <hr>
+        <p>•Kecepatan 550Mbps</p>
+        <p>•Unlimited Data</p>
+        <a href="formpaket8.html" class="btn">Pilih Paket</a>
+      </div>
+    </div>
+    
+    <h2 id="keunggulan">Kenapa Harus LGKRSC Wi-Fi?</h2>
+    <div class="kumpulankeunggulan">
+      <div class="keunggulan" data-aos="fade-up">
+        <img src="profesional.jpg" class="gambar" alt="gambar">
+        <h3>Profesional</h3>
+        <p>Kami memiliki teknisi yang profesional sehingga saat terjadi masalah atau saat pemasangan dijamin aman.</p>
+      </div>
+      
+      <div class="keunggulan" data-aos="fade-up">
+        <img src="internet.jpg" class="gambar" alt="gambar">
+        <h3>Internet Stabil</h3>
+        <p>Kami mementingkan kenyamanan para customer kami, maka kami menyediakan internet yang cepat dan stabil.</p>
+      </div>
+      
+      <div class="keunggulan" data-aos="fade-up">
+        <img src="trouble.jpg" class="gambar" alt="gambar">
+        <h3>Tidak Sering Trouble</h3>
+        <p>LGKRSC memberikan pelayanan yang maksimal untuk customer sehingga resiko terjadinya trouble atau masalah akan sedikit terjadi.</p>
+      </div>
+      
+      <div class="keunggulan" data-aos="fade-up">
+        <img src="harga.jpg" class="gambar" alt="gambar">
+        <h3>Harga</h3>
+        <p>Kami menawarkan harga yang murah demi kepuasan pelanggan, meskipun murah tapi pelayanan kami tidak murahan.</p>
+      </div>
+    </div>
+    
+    <h2 id="testimoni">Tesimoni/Riview</h2>
+    <div>
+      <div class="riview" data-aos="fade-up">
+        <img src="sugeng.jpg" class="testi" alt="gambar">
+        <h3>SUGENG</h3>
+        <hr>
+        <p>Wi-Fi nya kenceng banget sumpah</p>
+      </div>
+      
+      <div class="riview" data-aos="fade-up">
+        <img src="yanto.jpg" class="testi" alt="gambar">
+        <h3>YANTO</h3>
+        <hr>
+        <p>Gelo internetnya buat streaming lancar banget</p>
+      </div>
+      
+      <div class="riview" data-aos="fade-up">
+        <img src="handoko.jpg" class="testi" alt="gambar">
+        <h3>HANDOKO</h3>
+        <hr>
+        <p>Wi-Fi nya murah banget jir, dodolan ta sodakoh</p>
+      </div>
+    </div>
+    
+    <h2 id="ulasan">Tulis Ulasan</h2>
+    <form class="form-ulasan" id="form-ulasan">
+      <p>
+        <input type="text" class="form" placeholder="Nama">
+      </p>
+      
+      <p>
+        <textarea class="form" placeholder="Tulis ulasan"></textarea>
+      </p>
+      
+      <p>
+        <button class="btn">Kirim</button>
+      </p>  
+    </form>
+  </div>
+  
+  <footer class="footerbos">
+    <div class="footer">
+      <h2>Hubungi</h2>
+      <hr>
+      <p>0800-0000-0000</p>
+      <p>wifitermurah@gmail.com</p>
+    </div>
+    
+    <div class="footer">
+      <h2>Ikuti Kami</h2>
+      <hr>
+      <p>Tiktok: WifimurahseIndonesia</p>
+      <p>Instagram: Infowifimurah</p>
+    </div>
+    
+    <div class="footer">
+      <h2>Twitter</h2>
+      <hr>
+      <p>info@wifilgkrsc.id</p>
+    </div>
+  </footer>
+  
+  <div id="toast">✅ Ulasan berhasil dikirim</div>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+    const form = document.querySelector(".form-ulasan");
+    const toast = document.getElementById("toast");
+    
+    form.addEventListener("submit", function(event){
+      event.preventDefault();
+    
+      toast.classList.add("show");
+    
+      setTimeout(function(){
+        toast.classList.remove("show");
+      }, 3000);
+    
+      form.reset();
+    });
+  </script>
+
+</body>
+</html>
